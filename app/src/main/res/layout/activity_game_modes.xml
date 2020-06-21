@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".GameModes">
 
     <TextView
@@ -92,7 +93,7 @@
         android:layout_marginEnd="132dp"
         android:layout_marginRight="132dp"
         android:text="Treasure Hunt"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/darkblack"
         android:textColorHighlight="@color/colorPrimaryDark"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +111,7 @@
         android:layout_marginEnd="132dp"
         android:layout_marginRight="132dp"
         android:text="Game 2"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/darkblack"
         android:textColorHighlight="@color/colorPrimaryDark"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,7 +129,7 @@
         android:layout_marginEnd="132dp"
         android:layout_marginRight="132dp"
         android:text="Game 3"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/darkblack"
         android:textColorHighlight="@color/colorPrimaryDark"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -146,7 +147,7 @@
         android:layout_marginEnd="132dp"
         android:layout_marginRight="132dp"
         android:text="Game 4"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/darkblack"
         android:textColorHighlight="@color/colorPrimaryDark"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

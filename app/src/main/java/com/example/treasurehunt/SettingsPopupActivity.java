@@ -24,6 +24,7 @@ public class SettingsPopupActivity extends AppCompatActivity {
     private SeekBar SbHide;
     private SeekBar SbHideTime;
     boolean timeOn;
+    int lastNumbHide;
     int lastPosition;
     int lastHidePosition;
     SharedPreferences settings;
@@ -40,90 +41,39 @@ public class SettingsPopupActivity extends AppCompatActivity {
         SbHide = findViewById(R.id.SbHide);
         SbHide.setOnSeekBarChangeListener(SbSeekChangeListener);
 
+        //initialize seekbar for hide time
+        SbHideTime = findViewById(R.id.sbHideTime);
+        SbHideTime.setOnSeekBarChangeListener(SbHideTimeChangeListener);
+
+        //initialize seekbar for seek time
+        SbTime = findViewById(R.id.SbTime);
+        SbTime.setOnSeekBarChangeListener(SbTimeChangeListener);
+
         //initialize textview for displaying number of hiders
         NumbHide = SbHide.getProgress();
         Tv_NumbHide = findViewById(R.id.Tv_NumbHide);
         Tv_NumbHide.setText("Number of hiders: " + NumbHide);
 
-        //initialize seekbar for time
-        SbTime = findViewById(R.id.SbTime);
-        //disable seekbar
-        SbTime.setEnabled(false);
+        //initialize textview for displaying hide time
+        hidetime = SbHideTime.getProgress();
+        Tv_HideTime = findViewById(R.id.Tv_HideTime);
+        Tv_HideTime.setText("Time to hide: " + hidetime + " seconds");
 
-        //initialize textview for displaying time
+        //initialize textview for displaying seek time
         time = SbTime.getProgress();
         Tv_Time = findViewById(R.id.Tv_Time);
-        Tv_Time.setText("Time to search: "+ lastPosition + " seconds");
+        Tv_Time.setText("Time to search: "+ time + " seconds");
 
         //shared preferneces
         settings = getSharedPreferences("PREFS", MODE_PRIVATE);
         timeOn = settings.getBoolean("ON", true);
         lastPosition = settings.getInt("POSITION", 30);
-        SbTime.setProgress(lastPosition);
-        Tv_Time.setText("Time to search: "+ lastPosition + " seconds");
-
-        SbTime.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean fromUser) {
-                Tv_Time.setText("Time to search: "+ lastPosition + " seconds");
-                saveSettingsInt("POSITION", i);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-
-        //seekbar for hide time
-        Tv_HideTime = findViewById(R.id.Tv_HideTime);
-        SbHideTime = findViewById(R.id.sbHideTime);
+        lastNumbHide = settings.getInt("NumbHide", 2);
         lastHidePosition = settings.getInt("HIDE_POSITION", 30);
+
+        SbTime.setProgress(lastPosition);
+        SbHide.setProgress(lastNumbHide);
         SbHideTime.setProgress(lastHidePosition);
-        Tv_HideTime.setText("Time to hide: " + lastHidePosition + " seconds");
-        hidetime = SbHideTime.getProgress();
-
-        SbHideTime.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean fromUser) {
-                Tv_HideTime.setText("Time to hide: " + hidetime + " seconds");
-                saveSettingsInt("HIDE_POSITION", i);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-
-        //initialize switch for time
-        Switch STime = (Switch) findViewById(R.id.STime);
-        //create oncheckedchangelistener
-        STime.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    SbTime.setEnabled(true);
-                    Tv_Time.setEnabled(true);
-                    saveSettingsBoolean("ON", timeOn);
-                }
-                else {
-                    SbTime.setEnabled(false);
-                    Tv_Time.setEnabled(false);
-                    saveSettingsBoolean("ON", timeOn);
-                }
-            }
-        });
 
         btn_Return.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,9 +103,10 @@ public class SettingsPopupActivity extends AppCompatActivity {
     SeekBar.OnSeekBarChangeListener SbSeekChangeListener = new SeekBar.OnSeekBarChangeListener() {
 
         @Override
-        public void onProgressChanged(SeekBar SbHide, int NumbHide, boolean fromUser) {
+        public void onProgressChanged(SeekBar SbHide, int i, boolean fromUser) {
             // updated continuously as the user slides the thumb
-            Tv_NumbHide.setText("Number of hiders: " + NumbHide);
+            Tv_NumbHide.setText("Number of hiders: " + i);
+            saveSettingsInt("NumbHide", i);
         }
 
         @Override
@@ -168,6 +119,44 @@ public class SettingsPopupActivity extends AppCompatActivity {
 
         }
 
+    };
+
+    SeekBar.OnSeekBarChangeListener SbHideTimeChangeListener = new SeekBar.OnSeekBarChangeListener() {
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int i, boolean fromUser) {
+            // updated continuously as the user slides the thumb
+            Tv_HideTime.setText("Time to hide: " + i + " seconds");
+            saveSettingsInt("HIDE_POSITION", i);
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+
+        }
+    };
+
+    SeekBar.OnSeekBarChangeListener SbTimeChangeListener = new SeekBar.OnSeekBarChangeListener() {
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int i, boolean fromUser) {
+            // updated continuously as the user slides the thumb
+            Tv_Time.setText("Time to search: "+ i + " seconds");
+            saveSettingsInt("POSITION", i);
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+
+        }
     };
 
 }

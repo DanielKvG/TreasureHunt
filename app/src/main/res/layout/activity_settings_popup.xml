@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".SettingsPopupActivity">
 
     <SeekBar
@@ -22,6 +23,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <SeekBar
+        android:id="@+id/sbHideTime"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="274dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="328dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginRight="69dp"
+        android:max="180"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/SbTime"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="274dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginRight="69dp"
+        android:max="6000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/Tv_Time"
         android:layout_width="wrap_content"
@@ -30,8 +63,7 @@
         android:layout_marginLeft="101dp"
         android:layout_marginEnd="102dp"
         android:layout_marginRight="102dp"
-        android:layout_marginBottom="182dp"
-        android:enabled="false"
+        android:layout_marginBottom="216dp"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,53 +83,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Switch
-        android:id="@+id/STime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginEnd="206dp"
-        android:layout_marginRight="206dp"
-        android:layout_marginBottom="36dp"
-        android:checked="false"
-        android:text="Add time limit"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/SbTime"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <SeekBar
-        android:id="@+id/SbTime"
-        android:layout_width="273dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="69dp"
-        android:layout_marginLeft="69dp"
-        android:layout_marginEnd="69dp"
-        android:layout_marginRight="69dp"
-        android:layout_marginBottom="118dp"
-        android:max="600"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <SeekBar
-        android:id="@+id/sbHideTime"
-        android:layout_width="273dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="69dp"
-        android:layout_marginLeft="69dp"
-        android:layout_marginTop="105dp"
-        android:layout_marginEnd="69dp"
-        android:layout_marginRight="69dp"
-        android:max="300"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SbHide" />
 
     <ImageButton
         android:id="@+id/btn_Return"

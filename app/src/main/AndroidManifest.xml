@@ -13,7 +13,6 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
 
     <application
         android:allowBackup="true"
@@ -22,14 +21,40 @@
         android:roundIcon="@mipmap/th_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
+        <activity android:name=".StartupActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"/>
+        <activity
+            android:name=".BTconnect_popup"
+            android:theme="@style/AppTheme.TapDel" />
+        <activity android:name=".GameModes" />
+        <activity
+            android:name=".AdminPopup"
+            android:theme="@style/AppTheme.BackDel" />
+        <activity android:name=".LoadingScreenActivity" />
+        <activity android:name=".ChooseFunctionAction" />
+        <activity android:name=".AddNames" />
+        <activity android:name=".PlayerRoles" />
+        <activity android:name=".SettingsPopupActivity" />
+        <activity android:name=".CountDownActivityHide" />
+        <activity android:name=".RemainingTimeActivity" />
+        <activity android:name=".CountDownActivity" />
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" />
         <activity
             android:name=".CheckCodeActivity"
-            android:theme="@style/AppTheme.BackDel"
-            />
+            android:theme="@style/AppTheme.BackDel" />
         <activity android:name=".LoseActivity" />
         <activity android:name=".WinActivity" />
-        <activity android:name=".RemainingTimeActivity" />
-        <activity android:name=".CountDownActivityHide" />
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -42,29 +67,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
-        <activity android:name=".CountDownActivity" />
-        <activity android:name=".ChooseFunctionAction" />
-        <activity android:name=".LoadingScreenActivity" />
-        <activity
-            android:name=".AdminPopup"
-            android:theme="@style/AppTheme.BackDel" />
-        <activity android:name=".SettingsPopupActivity" />
-        <activity android:name=".PlayerRoles" />
-        <activity android:name=".AddNames" />
-        <activity android:name=".GameModes" />
-        <activity
-            android:name=".BTconnect_popup"
-            android:theme="@style/AppTheme.TapDel" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
