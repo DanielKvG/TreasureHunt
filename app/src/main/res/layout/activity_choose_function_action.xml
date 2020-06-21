@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Pb_StartGame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChooseFunctionAction">
+
+    <View
+        android:id="@+id/V_Seek"
+        android:layout_width="170dp"
+        android:layout_height="179dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="121dp"
+        android:layout_marginRight="121dp"
+        android:background="@drawable/selectbackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tv_Function" />
+
+    <View
+        android:id="@+id/V_Hide"
+        android:layout_width="170dp"
+        android:layout_height="179dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="121dp"
+        android:layout_marginRight="121dp"
+        android:background="@drawable/selectbackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tv_Function" />
+
+    <TextView
+        android:id="@+id/Tv_Function"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginRight="93dp"
+        android:text="Choose your role:"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Iv_Seeker"
+        android:layout_width="149dp"
+        android:layout_height="137dp"
+        android:layout_marginStart="131dp"
+        android:layout_marginLeft="131dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginRight="131dp"
+        android:onClick="Iv_Seeker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tv_Seeker"
+        app:srcCompat="@drawable/searchbutton" />
+
+    <ImageView
+        android:id="@+id/Iv_Hider"
+        android:layout_width="206dp"
+        android:layout_height="169dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginLeft="102dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginRight="103dp"
+        android:scaleType="centerCrop"
+        android:onClick="Iv_Hider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Iv_Seeker"
+        app:srcCompat="@drawable/runbutton" />
+
+    <TextView
+        android:id="@+id/Tv_Hider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="169dp"
+        android:layout_marginLeft="169dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginRight="170dp"
+        android:text="Hider"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Iv_Seeker" />
+
+    <TextView
+        android:id="@+id/Tv_Seeker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginRight="160dp"
+        android:text="Seeker"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tv_Function" />
+
+    <View
+        android:id="@+id/V_wait"
+        android:layout_width="258dp"
+        android:layout_height="131dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginEnd="77dp"
+        android:layout_marginRight="77dp"
+        android:layout_marginBottom="41dp"
+        android:background="@drawable/btpopup_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/Pb_wait"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="79dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="166dp"
+        android:layout_marginLeft="166dp"
+        android:layout_marginEnd="166dp"
+        android:layout_marginRight="166dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/Tv_wait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginLeft="176dp"
+        android:layout_marginEnd="177dp"
+        android:layout_marginRight="177dp"
+        android:layout_marginBottom="7dp"
+        android:text="Wait for the other players to finish"
+        app:layout_constraintBottom_toTopOf="@+id/Pb_wait"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

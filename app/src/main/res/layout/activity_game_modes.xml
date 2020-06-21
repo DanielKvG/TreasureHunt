@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameModes">
+
+    <TextView
+        android:id="@+id/tV_GameMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="129dp"
+        android:layout_marginLeft="129dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="129dp"
+        android:layout_marginRight="129dp"
+        android:text="Choose your gamemode"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="241dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginRight="85dp"
+        android:onClick="imageView"
+        android:scaleType="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tV_GameMode"
+        app:srcCompat="@drawable/brown1" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="241dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginRight="85dp"
+        android:scaleType="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/brown1" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="241dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginRight="85dp"
+        android:scaleType="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:srcCompat="@drawable/brown1" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="241dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginRight="85dp"
+        android:scaleType="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:srcCompat="@drawable/brown1" />
+
+    <TextView
+        android:id="@+id/tV_TreasureHunt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginRight="132dp"
+        android:text="Treasure Hunt"
+        android:textColor="@color/colorAccent"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tV_GameMode" />
+
+    <TextView
+        android:id="@+id/tV_TreasureHunt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginRight="132dp"
+        android:text="Game 2"
+        android:textColor="@color/colorAccent"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tV_GameMode" />
+
+    <TextView
+        android:id="@+id/tV_TreasureHunt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="336dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginRight="132dp"
+        android:text="Game 3"
+        android:textColor="@color/colorAccent"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tV_GameMode" />
+
+    <TextView
+        android:id="@+id/tV_TreasureHunt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="456dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginRight="132dp"
+        android:text="Game 4"
+        android:textColor="@color/colorAccent"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tV_GameMode" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/btpopup_background"
+    android:scrollbarTrackHorizontal="@android:color/background_dark"
+    tools:context=".CheckCodeActivity">
+
+    <EditText
+        android:id="@+id/Et_Code"
+        android:layout_width="159dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Code"
+        android:inputType="text|number"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_Check"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
+        android:gravity="center_horizontal"
+        android:text="Insert your code here:"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_Check"
+        android:layout_width="104dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginRight="73dp"
+        android:text="Check"
+        android:onClick="btn_Check"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Et_Code"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/Tv_Wrong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="109dp"
+        android:layout_marginLeft="109dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginRight="110dp"
+        android:text="WRONG CODE"
+        android:textColor="#FF0000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Check" />
+</androidx.constraintlayout.widget.ConstraintLayout>
