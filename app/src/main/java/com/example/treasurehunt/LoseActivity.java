@@ -14,11 +14,7 @@ public class LoseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lose);
     }
 
-    public void btn_TreasureHuntPlay(View view) {
-        startActivity(new Intent(LoseActivity.this, AdminPopup.class));
-    }
-
-    public void btn_PlayOtherMode(View view) {
-        startActivity(new Intent(LoseActivity.this, GameModes.class));
+    public void btn_Exit2(View view) {
+        startActivity(new Intent(LoseActivity.this, ExitActivty.class));
     }
 }

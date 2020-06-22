@@ -22,15 +22,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
-        <activity android:name=".StartupActivity">
+        <activity android:name=".StartupActivity"
+            android:theme="@style/AppThemeStart">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".BTconnect_popup"
             android:theme="@style/AppTheme.TapDel" />
@@ -51,10 +51,12 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".CheckCodeActivity"
-            android:theme="@style/AppTheme.BackDel" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoseActivity" />
         <activity android:name=".WinActivity" />
-
+        <activity
+            android:name=".ExitActivty"
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -66,7 +68,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
     </application>
 
 </manifest>

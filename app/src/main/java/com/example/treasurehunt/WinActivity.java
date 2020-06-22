@@ -14,11 +14,7 @@ public class WinActivity extends AppCompatActivity {
         setContentView(R.layout.activity_win);
     }
 
-    public void button2(View view) {
-        startActivity(new Intent(WinActivity.this, GameModes.class));
-    }
-
-    public void button(View view) {
-        startActivity(new Intent(WinActivity.this, AdminPopup.class));
+    public void btn_Exit(View view) {
+        startActivity(new Intent(WinActivity.this, ExitActivty.class));
     }
 }

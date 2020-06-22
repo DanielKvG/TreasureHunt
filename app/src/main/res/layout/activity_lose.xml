@@ -7,48 +7,67 @@
     android:background="@color/background"
     tools:context=".LoseActivity">
 
+    <Button
+        android:id="@+id/btn_Exit2"
+        android:layout_width="157dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/colorAccent"
+        android:onClick="btn_Exit2"
+        android:text="EXIT GAME"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="121dp"
         android:layout_marginLeft="121dp"
-        android:layout_marginTop="275dp"
+        android:layout_marginTop="436dp"
         android:layout_marginEnd="122dp"
         android:layout_marginRight="122dp"
-        android:text="You lost...."
-        android:textSize="36sp"
+        android:text="LOSER"
+        android:textColor="#000000"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_TreasureHuntPlay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginBottom="20dp"
-        android:text="Return to treasure hunt"
-        android:onClick="btn_TreasureHuntPlay"
-        app:layout_constraintBottom_toTopOf="@+id/btn_PlayOtherMode"
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="242dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginRight="85dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/loser" />
 
-    <Button
-        android:id="@+id/btn_PlayOtherMode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:layout_marginLeft="110dp"
-        android:layout_marginEnd="111dp"
-        android:layout_marginRight="111dp"
-        android:layout_marginBottom="63dp"
-        android:text="Play other game mode"
-        android:onClick="btn_PlayOtherMode"
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="350dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginBottom="34dp"
+        android:gravity="center_horizontal"
+        android:text="Another person already found the treasure, better luck next time!"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

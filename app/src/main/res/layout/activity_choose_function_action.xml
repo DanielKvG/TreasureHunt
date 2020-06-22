@@ -5,7 +5,7 @@
     android:id="@+id/Pb_StartGame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/background"
     tools:context=".ChooseFunctionAction">
 
     <View
@@ -122,7 +122,7 @@
         android:layout_marginEnd="77dp"
         android:layout_marginRight="77dp"
         android:layout_marginBottom="41dp"
-        android:background="@drawable/btpopup_background"
+        android:background="@drawable/viewloadback"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

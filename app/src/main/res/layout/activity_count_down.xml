@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="#83A17C"
     tools:context=".CountDownActivity">
 
     <TextView
@@ -57,7 +57,7 @@
         android:layout_marginTop="37dp"
         android:layout_marginEnd="106dp"
         android:layout_marginRight="106dp"
-        android:text="befor the"
+        android:text="before the"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

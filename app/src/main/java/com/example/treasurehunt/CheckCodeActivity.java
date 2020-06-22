@@ -41,7 +41,7 @@ public class CheckCodeActivity extends AppCompatActivity {
         int height = DM2.heightPixels;
         int width = DM2.widthPixels;
 
-        getWindow().setLayout((int)(width/1.2), (int)(height/2.8));
+        getWindow().setLayout((int)(width/1.2), (int)(height/3.2));
 
         WindowManager.LayoutParams params = getWindow().getAttributes();
         params.gravity = Gravity.CENTER;

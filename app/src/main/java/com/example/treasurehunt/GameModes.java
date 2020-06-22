@@ -14,7 +14,7 @@ public class GameModes extends AppCompatActivity {
         setContentView(R.layout.activity_game_modes);
     }
 
-    public void imageView(View view) {
+    public void btn_TreasureHunt(View view) {
         startActivity(new Intent(GameModes.this, AdminPopup.class));
     }
 }

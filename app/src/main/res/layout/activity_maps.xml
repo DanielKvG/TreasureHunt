@@ -20,7 +20,7 @@
 
         <View
             android:id="@+id/V_Remain"
-            android:layout_width="274dp"
+            android:layout_width="297dp"
             android:layout_height="64dp"
             android:layout_marginTop="26dp"
             android:layout_marginEnd="16dp"
@@ -33,7 +33,7 @@
             android:id="@+id/Tv_TimeRemain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="28dp"
             android:layout_marginRight="28dp"
             android:text="100 seconds remaining"
