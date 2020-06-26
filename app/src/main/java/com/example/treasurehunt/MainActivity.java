@@ -30,11 +30,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     ListView ListviewDevices;
     private Button btn_NextActivity;
 
-    // Create a BroadcastReceiver for ACTION_FOUND.
+    // Create a BroadcastReceiver for ACTION_FOUND. this will log the states of turning on bluetooth
     private final BroadcastReceiver BroadcastReceiver1 = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
 
+            //if the bluetooth action state changes, log the change
             if (action.equals(BA.ACTION_STATE_CHANGED)) {
                 final int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, BA.ERROR);
 
@@ -56,12 +57,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     };
 
+    //log changes of the scan activity
     private final BroadcastReceiver BroadcastReceiver2 = new BroadcastReceiver() {
 
         @Override
         public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
-
+            //if the scan mode has changed, log the change
             if (action.equals(BluetoothAdapter.ACTION_SCAN_MODE_CHANGED)) {
 
                 int mode = intent.getIntExtra(BluetoothAdapter.EXTRA_SCAN_MODE, BluetoothAdapter.ERROR);
@@ -90,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     };
 
+    //Log when a bluetooth device is found and store the device in the array adapter
     private BroadcastReceiver BroadcastReceiver3 = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -99,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             if (action.equals(BluetoothDevice.ACTION_FOUND)) {
                 //declare the device, then get it by parcelableExtra
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                //store the device
+                //store the device in the array adapter
                 BTDevices.add(device);
                 //log name and address of bluetooth device
                 Log.d(TAG, "onReceive: " + device.getName() + ": " + device.getAddress());
@@ -109,9 +112,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     };
 
-    /**
-     * Broadcast Receiver that detects bond state changes (Pairing status changes)
-     */
+    //Log changes in bonding state
     private final BroadcastReceiver BroadcastReceiver4 = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -163,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         ListviewDevices.setOnItemClickListener(MainActivity.this);
 
-
+        //set the bluetooth default adapter for all bluetooth actions
         BA = BluetoothAdapter.getDefaultAdapter();
 
         btnDiscover.setOnClickListener(new View.OnClickListener() {
@@ -202,13 +203,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
     public void btnDiscOn(View view) {
-        //make device discoverable for 300 seconds
+        //log that the device will be made visible
         Log.d(TAG, "btnDiscover: Making device discoverable for 300 seconds.");
 
+        //make the device visible for 300 seconds, first define the intent
         Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+        //then add the time amount to the intent
         discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
+        //start the intent
         startActivity(discoverableIntent);
 
+        //send all the changes to broadcast receiver 2
         IntentFilter intentFilter = new IntentFilter(BA.ACTION_SCAN_MODE_CHANGED);
         registerReceiver(BroadcastReceiver2, intentFilter);
     }
@@ -272,6 +277,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //NOTE: Requires API 18+
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN_MR2) {
             Log.d(TAG, "Trying to pair with " + deviceName);
+            //to make a bond with for example, the next code must be added:
+            //  BTDevices.get(int).createBond();
+            //but for the prototype, the user will be sent immediately to the next activity
             startActivity(new Intent(MainActivity.this, GameModes.class));
         }
     }

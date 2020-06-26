@@ -17,6 +17,12 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+/**
+ * @author DanielKvG
+ * This is a predefined action from android studio involving the map. The found button and remaining
+ * time are added.
+ */
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -38,10 +44,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Tv_TimeRemain = findViewById(R.id.Tv_TimeRemain);
         V_Remain = findViewById(R.id.V_Remain);
 
+        //get the remaining time from the shared preferences
         SharedPreferences settings = getSharedPreferences("PREFS", MODE_PRIVATE);
         timeOn = settings.getBoolean("ON", true);
         lastPosition = settings.getInt("POSITION", 0);
 
+        //set the countdown to the defined time
         if (timeOn) {
             seekCountDown = new CountDownTimer(lastPosition*1000, 1000) {
                 public void onTick(long millisUntilFinished) {
@@ -52,7 +60,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     startActivity(new Intent(MapsActivity.this, LoseActivity.class));
                 }
             }.start();
-        } else {
+        } else { // if the seek count down is disabled, dont show it, this will be functional in the mass app.
             Tv_TimeRemain.setText("");
             V_Remain.setVisibility(View.INVISIBLE);
         }
@@ -78,6 +86,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void V_Target(View view) {
+        //cancel the countdown so the lose activity won't be activated
         seekCountDown.cancel();
         startActivity(new Intent(MapsActivity.this, CheckCodeActivity.class));
     }

@@ -9,6 +9,11 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 
+/**
+ * @author DanielKvG
+ * this is the last activity, the user can choose whether he wants to return to the gamemodes screen or do a rematch
+ */
+
 public class ExitActivty extends AppCompatActivity {
 
     @Override

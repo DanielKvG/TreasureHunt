@@ -12,6 +12,11 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+/**
+ * @author DanielKvG
+ * In this action you can choose whether you are the seeker or the hider, if not the first player.
+ */
+
 public class ChooseFunctionAction extends AppCompatActivity {
 
     private TextView Tv_Function;
@@ -27,10 +32,6 @@ public class ChooseFunctionAction extends AppCompatActivity {
     private Handler SeekHandler;
     private Handler HideHandler;
 
-    //for skipping settings
-    boolean timeOn;
-    int lastPosition;
-    int lastHidePosition;
     SharedPreferences settings;
 
     @Override

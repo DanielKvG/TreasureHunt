@@ -8,6 +8,11 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
+/**
+ * @author DanielKvG
+ * same acitivy as the countdown for seekers, but with other text
+ */
+
 public class CountDownActivityHide extends AppCompatActivity {
 
     private TextView Tv_Timer2;

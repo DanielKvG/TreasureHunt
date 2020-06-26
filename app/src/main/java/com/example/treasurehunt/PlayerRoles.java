@@ -16,15 +16,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * @author DanielKvG
+ * All the player roles are shown in this activity, every player is then able to select their role.
+ * In te mass product app, this will be done automaticaly.
+ */
+
 public class PlayerRoles extends AppCompatActivity {
 
-    private TextView TvSeekers;
-    private TextView TvHiders;
     private ListView LVSeekers;
     private ListView LVHiders;
     private Handler HideHandler;
     private Handler SeekHandler;
-
     private TextView Tv_wait;
     private View V_Wait;
     private ProgressBar Pb_wait;
@@ -44,15 +47,18 @@ public class PlayerRoles extends AppCompatActivity {
         V_Wait = findViewById(R.id.v_wait);
         Pb_wait = findViewById(R.id.pb_wait);
 
+        //get the string of the seekers from the previous activity with the defined key, same for the hiders.
         String seekers = getIntent().getStringExtra("seeker_key");
         List<String> SeekerList = new ArrayList<String>(Arrays.asList(seekers));
 
         String hiders = getIntent().getStringExtra("hider_key");
         List<String> HiderList = new ArrayList<String>(Arrays.asList(hiders));
 
+        //set the layout for the array adapters of the seekers and hiders.
         ArrayAdapter<String> SeekerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, SeekerList);
         ArrayAdapter<String> HiderAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, HiderList);
 
+        //connect the adapters to their list view
         LVSeekers.setAdapter(SeekerAdapter);
         LVHiders.setAdapter(HiderAdapter);
 

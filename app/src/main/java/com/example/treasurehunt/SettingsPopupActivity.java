@@ -12,6 +12,11 @@ import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 
+/**
+ * @author DanielKvG
+ * in this activity you can change the number of hiders, hide time and search time
+ */
+
 public class SettingsPopupActivity extends AppCompatActivity {
 
     TextView Tv_NumbHide;
@@ -71,6 +76,7 @@ public class SettingsPopupActivity extends AppCompatActivity {
         lastNumbHide = settings.getInt("NumbHide", 2);
         lastHidePosition = settings.getInt("HIDE_POSITION", 30);
 
+        //set the seekbars to their last position
         SbTime.setProgress(lastPosition);
         SbHide.setProgress(lastNumbHide);
         SbHideTime.setProgress(lastHidePosition);
@@ -78,8 +84,10 @@ public class SettingsPopupActivity extends AppCompatActivity {
         btn_Return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //get the progress of the hide seek bar to an integer
                 int numbHide = SbHide.getProgress();
                 Intent intent = new Intent(SettingsPopupActivity.this, AddNames.class);
+                //add the number of hiders to the intent with the access key
                 intent.putExtra("NumbHide_key", numbHide);
                 startActivity(intent);
             }
@@ -87,25 +95,21 @@ public class SettingsPopupActivity extends AppCompatActivity {
 
     }
 
-    public void saveSettingsBoolean(String s, boolean b) {
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putBoolean(s, b);
-        editor.apply();
-    }
-
+    //method called when settings are changed, they will be stored in the saved preferences.
     public void saveSettingsInt(String s, int i) {
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt(s, i);
         editor.apply();
     }
 
-
+    //Detects change when the settings for number of hiders is changed
     SeekBar.OnSeekBarChangeListener SbSeekChangeListener = new SeekBar.OnSeekBarChangeListener() {
 
         @Override
         public void onProgressChanged(SeekBar SbHide, int i, boolean fromUser) {
             // updated continuously as the user slides the thumb
             Tv_NumbHide.setText("Number of hiders: " + i);
+            //call the save method
             saveSettingsInt("NumbHide", i);
         }
 
@@ -121,11 +125,13 @@ public class SettingsPopupActivity extends AppCompatActivity {
 
     };
 
+    //Detects change when the settings for hide time are changed
     SeekBar.OnSeekBarChangeListener SbHideTimeChangeListener = new SeekBar.OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int i, boolean fromUser) {
             // updated continuously as the user slides the thumb
             Tv_HideTime.setText("Time to hide: " + i + " seconds");
+            //call the save method
             saveSettingsInt("HIDE_POSITION", i);
         }
 
@@ -140,11 +146,13 @@ public class SettingsPopupActivity extends AppCompatActivity {
         }
     };
 
+    //Detects change when the settings for hide time are changed
     SeekBar.OnSeekBarChangeListener SbTimeChangeListener = new SeekBar.OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int i, boolean fromUser) {
             // updated continuously as the user slides the thumb
             Tv_Time.setText("Time to search: "+ i + " seconds");
+            //call the save method
             saveSettingsInt("POSITION", i);
         }
 

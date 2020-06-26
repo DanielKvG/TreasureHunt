@@ -13,6 +13,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/**
+ * @author DanielKvG
+ * in this acitivy the code found on the device will be checked
+ * In the mass product application the code will be received through a string from the device.
+ * Now the code is already defined (6249)
+ */
+
 public class CheckCodeActivity extends AppCompatActivity {
 
     private TextView Tv_Wrong;
@@ -20,6 +27,7 @@ public class CheckCodeActivity extends AppCompatActivity {
     private Button btn_Check;
     private String EditCode;
     private int editCode;
+    //define the code, on the place of the int will be the string received from the device.
     private int code=6249;
 
     @Override
@@ -54,12 +62,15 @@ public class CheckCodeActivity extends AppCompatActivity {
 
     public void btn_Check(View view) {
 
+        //convert the edit text to a string
         EditCode = Et_Code.getText().toString();
+        //convert the string to an integer
         editCode = Integer.parseInt(EditCode);
 
+        //if the code filled in is the same as the defined code
         if (editCode == code) {
             startActivity(new Intent(CheckCodeActivity.this, WinActivity.class));
-        } else {
+        } else { //else show the text "WRONG CODE"
             Tv_Wrong.setVisibility(View.VISIBLE);
         }
     }

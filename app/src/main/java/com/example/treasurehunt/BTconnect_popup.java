@@ -15,6 +15,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+/**
+ * @author DanielKvG
+ * In this popup you are able to connect to bluetooth if you havent done tis already
+ */
+
 public class BTconnect_popup extends Activity {
     private MainActivity mainActivity;
     ImageButton btnBTON;
