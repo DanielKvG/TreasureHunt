@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -56,13 +57,14 @@ public class AddNames extends AppCompatActivity implements View.OnClickListener,
         btn_StartGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //int NumbPlayers = names.size();
-                String Players = names.toString();
-                int NumbHide = getIntent().getIntExtra("NumbHide_key", 0);
+                //shuffle the players list so that the hiders will be chosen randomly
+                Collections.shuffle(names);
+                //get the number of hiders to an integer with default of 2
+                int NumbHide = getIntent().getIntExtra("NumbHide_key", 2);
+                //devide the names list into the hiders and seekers using the number of hiders
                 List<String> Hiders = names.subList(0, NumbHide);
                 List<String> Seekers = names.subList(NumbHide, names.size());
-                //String hiders = Players.substring(0, NumbHide);
-                //String seekers = Players.substring(NumbHide + 1, 4);
+                //convert the lists into strings
                 String hiders = Hiders.toString();
                 String seekers = Seekers.toString();
 
