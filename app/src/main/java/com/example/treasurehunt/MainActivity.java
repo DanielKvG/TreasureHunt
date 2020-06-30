@@ -1,6 +1,7 @@
 package com.example.treasurehunt;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
@@ -18,8 +19,20 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+
+/**
+ * @author DanielKvG
+ * This is the activity in which connection is made with the smart product.
+ * First is checked whether bluetooth is already on or not, if not, you will be able to do this.
+ * When already turned on, a notification will show up in the screen.
+ * Then the user can make the device visible for other devices and discover other devices.
+ * When the smart product is discovered, the user will normally be able to connect with the smart product,
+ * but due complexitiy with BLE, only normal devices will be able to connect. (when the code in the bottom of the onclick method of the adapterview is activated).
+ * In this application the user will be directed to the next acitivy when clicked on the device.
+ */
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private static final String TAG = "MainActivity";
@@ -193,11 +206,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         //if bluetooth is enabled
         if (BA.isEnabled()) {
-            Log.d(TAG, "enableDisableBT: disabling BT.");
-            BA.disable();
-
-            IntentFilter BTIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
-            registerReceiver(BroadcastReceiver1, BTIntent);
+            Log.d(TAG, "enableDisableBT: BT already enabled");
+            Toast.makeText(this, "Already enabled", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -218,6 +228,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         registerReceiver(BroadcastReceiver2, intentFilter);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void btnDisc(View view) {
         Log.d(TAG, "btnDisc: Looking for unpaired devices.");
 
@@ -244,6 +255,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     //method for bluetooth permission by Mitch Tabian (without comments)
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void BTpermission() {
         //check if the androidversion is higher then lollipop
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
