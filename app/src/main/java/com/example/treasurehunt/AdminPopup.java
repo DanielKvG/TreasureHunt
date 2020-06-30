@@ -36,7 +36,7 @@ public class AdminPopup extends Activity {
         int width = DM2.widthPixels;
 
         //set window layout to screen ratio
-        getWindow().setLayout((int)(width/1.2), (int)(height/3.5));
+        getWindow().setLayout((int)(width/1.2), (int)(700));
 
         //set position of the popup
         WindowManager.LayoutParams params = getWindow().getAttributes();
